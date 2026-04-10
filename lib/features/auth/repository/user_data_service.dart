@@ -26,7 +26,7 @@ class UserDataService {
     UserModel user = UserModel(
       userId: auth.currentUser!.uid,
       displayName: displayName,
-      userName: userName,
+      username: userName,
       email: email,
       profilePic: profilePic,
       subscriptions: [],

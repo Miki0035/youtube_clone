@@ -8,7 +8,7 @@ abstract class UserModel with _$UserModel {
   const factory UserModel({
     required String userId,
     required String displayName,
-    @JsonKey(name: "username") required String userName,
+    required String username,
     required String email,
     required String profilePic,
     required List<String> subscriptions,

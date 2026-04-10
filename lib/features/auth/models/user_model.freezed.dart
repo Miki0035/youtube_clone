@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UserModel {
 
- String get userId; String get displayName;@JsonKey(name: "username") String get userName; String get email; String get profilePic; List<String> get subscriptions; int get videos; String get description; String get type;
+ String get userId; String get displayName; String get username; String get email; String get profilePic; List<String> get subscriptions; int get videos; String get description; String get type;
 /// Create a copy of UserModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $UserModelCopyWith<UserModel> get copyWith => _$UserModelCopyWithImpl<UserModel>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserModel&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.displayName, displayName) || other.displayName == displayName)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.email, email) || other.email == email)&&(identical(other.profilePic, profilePic) || other.profilePic == profilePic)&&const DeepCollectionEquality().equals(other.subscriptions, subscriptions)&&(identical(other.videos, videos) || other.videos == videos)&&(identical(other.description, description) || other.description == description)&&(identical(other.type, type) || other.type == type));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserModel&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.displayName, displayName) || other.displayName == displayName)&&(identical(other.username, username) || other.username == username)&&(identical(other.email, email) || other.email == email)&&(identical(other.profilePic, profilePic) || other.profilePic == profilePic)&&const DeepCollectionEquality().equals(other.subscriptions, subscriptions)&&(identical(other.videos, videos) || other.videos == videos)&&(identical(other.description, description) || other.description == description)&&(identical(other.type, type) || other.type == type));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,userId,displayName,userName,email,profilePic,const DeepCollectionEquality().hash(subscriptions),videos,description,type);
+int get hashCode => Object.hash(runtimeType,userId,displayName,username,email,profilePic,const DeepCollectionEquality().hash(subscriptions),videos,description,type);
 
 @override
 String toString() {
-  return 'UserModel(userId: $userId, displayName: $displayName, userName: $userName, email: $email, profilePic: $profilePic, subscriptions: $subscriptions, videos: $videos, description: $description, type: $type)';
+  return 'UserModel(userId: $userId, displayName: $displayName, username: $username, email: $email, profilePic: $profilePic, subscriptions: $subscriptions, videos: $videos, description: $description, type: $type)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $UserModelCopyWith<$Res>  {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) _then) = _$UserModelCopyWithImpl;
 @useResult
 $Res call({
- String userId, String displayName,@JsonKey(name: "username") String userName, String email, String profilePic, List<String> subscriptions, int videos, String description, String type
+ String userId, String displayName, String username, String email, String profilePic, List<String> subscriptions, int videos, String description, String type
 });
 
 
@@ -65,11 +65,11 @@ class _$UserModelCopyWithImpl<$Res>
 
 /// Create a copy of UserModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? userId = null,Object? displayName = null,Object? userName = null,Object? email = null,Object? profilePic = null,Object? subscriptions = null,Object? videos = null,Object? description = null,Object? type = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? userId = null,Object? displayName = null,Object? username = null,Object? email = null,Object? profilePic = null,Object? subscriptions = null,Object? videos = null,Object? description = null,Object? type = null,}) {
   return _then(_self.copyWith(
 userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String,displayName: null == displayName ? _self.displayName : displayName // ignore: cast_nullable_to_non_nullable
-as String,userName: null == userName ? _self.userName : userName // ignore: cast_nullable_to_non_nullable
+as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,profilePic: null == profilePic ? _self.profilePic : profilePic // ignore: cast_nullable_to_non_nullable
 as String,subscriptions: null == subscriptions ? _self.subscriptions : subscriptions // ignore: cast_nullable_to_non_nullable
@@ -161,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String userId,  String displayName, @JsonKey(name: "username")  String userName,  String email,  String profilePic,  List<String> subscriptions,  int videos,  String description,  String type)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String userId,  String displayName,  String username,  String email,  String profilePic,  List<String> subscriptions,  int videos,  String description,  String type)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UserModel() when $default != null:
-return $default(_that.userId,_that.displayName,_that.userName,_that.email,_that.profilePic,_that.subscriptions,_that.videos,_that.description,_that.type);case _:
+return $default(_that.userId,_that.displayName,_that.username,_that.email,_that.profilePic,_that.subscriptions,_that.videos,_that.description,_that.type);case _:
   return orElse();
 
 }
@@ -182,10 +182,10 @@ return $default(_that.userId,_that.displayName,_that.userName,_that.email,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String userId,  String displayName, @JsonKey(name: "username")  String userName,  String email,  String profilePic,  List<String> subscriptions,  int videos,  String description,  String type)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String userId,  String displayName,  String username,  String email,  String profilePic,  List<String> subscriptions,  int videos,  String description,  String type)  $default,) {final _that = this;
 switch (_that) {
 case _UserModel():
-return $default(_that.userId,_that.displayName,_that.userName,_that.email,_that.profilePic,_that.subscriptions,_that.videos,_that.description,_that.type);case _:
+return $default(_that.userId,_that.displayName,_that.username,_that.email,_that.profilePic,_that.subscriptions,_that.videos,_that.description,_that.type);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -202,10 +202,10 @@ return $default(_that.userId,_that.displayName,_that.userName,_that.email,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String userId,  String displayName, @JsonKey(name: "username")  String userName,  String email,  String profilePic,  List<String> subscriptions,  int videos,  String description,  String type)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String userId,  String displayName,  String username,  String email,  String profilePic,  List<String> subscriptions,  int videos,  String description,  String type)?  $default,) {final _that = this;
 switch (_that) {
 case _UserModel() when $default != null:
-return $default(_that.userId,_that.displayName,_that.userName,_that.email,_that.profilePic,_that.subscriptions,_that.videos,_that.description,_that.type);case _:
+return $default(_that.userId,_that.displayName,_that.username,_that.email,_that.profilePic,_that.subscriptions,_that.videos,_that.description,_that.type);case _:
   return null;
 
 }
@@ -217,12 +217,12 @@ return $default(_that.userId,_that.displayName,_that.userName,_that.email,_that.
 @JsonSerializable()
 
 class _UserModel implements UserModel {
-  const _UserModel({required this.userId, required this.displayName, @JsonKey(name: "username") required this.userName, required this.email, required this.profilePic, required final  List<String> subscriptions, required this.videos, required this.description, required this.type}): _subscriptions = subscriptions;
+  const _UserModel({required this.userId, required this.displayName, required this.username, required this.email, required this.profilePic, required final  List<String> subscriptions, required this.videos, required this.description, required this.type}): _subscriptions = subscriptions;
   factory _UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
 
 @override final  String userId;
 @override final  String displayName;
-@override@JsonKey(name: "username") final  String userName;
+@override final  String username;
 @override final  String email;
 @override final  String profilePic;
  final  List<String> _subscriptions;
@@ -249,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserModel&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.displayName, displayName) || other.displayName == displayName)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.email, email) || other.email == email)&&(identical(other.profilePic, profilePic) || other.profilePic == profilePic)&&const DeepCollectionEquality().equals(other._subscriptions, _subscriptions)&&(identical(other.videos, videos) || other.videos == videos)&&(identical(other.description, description) || other.description == description)&&(identical(other.type, type) || other.type == type));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserModel&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.displayName, displayName) || other.displayName == displayName)&&(identical(other.username, username) || other.username == username)&&(identical(other.email, email) || other.email == email)&&(identical(other.profilePic, profilePic) || other.profilePic == profilePic)&&const DeepCollectionEquality().equals(other._subscriptions, _subscriptions)&&(identical(other.videos, videos) || other.videos == videos)&&(identical(other.description, description) || other.description == description)&&(identical(other.type, type) || other.type == type));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,userId,displayName,userName,email,profilePic,const DeepCollectionEquality().hash(_subscriptions),videos,description,type);
+int get hashCode => Object.hash(runtimeType,userId,displayName,username,email,profilePic,const DeepCollectionEquality().hash(_subscriptions),videos,description,type);
 
 @override
 String toString() {
-  return 'UserModel(userId: $userId, displayName: $displayName, userName: $userName, email: $email, profilePic: $profilePic, subscriptions: $subscriptions, videos: $videos, description: $description, type: $type)';
+  return 'UserModel(userId: $userId, displayName: $displayName, username: $username, email: $email, profilePic: $profilePic, subscriptions: $subscriptions, videos: $videos, description: $description, type: $type)';
 }
 
 
@@ -269,7 +269,7 @@ abstract mixin class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Re
   factory _$UserModelCopyWith(_UserModel value, $Res Function(_UserModel) _then) = __$UserModelCopyWithImpl;
 @override @useResult
 $Res call({
- String userId, String displayName,@JsonKey(name: "username") String userName, String email, String profilePic, List<String> subscriptions, int videos, String description, String type
+ String userId, String displayName, String username, String email, String profilePic, List<String> subscriptions, int videos, String description, String type
 });
 
 
@@ -286,11 +286,11 @@ class __$UserModelCopyWithImpl<$Res>
 
 /// Create a copy of UserModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? userId = null,Object? displayName = null,Object? userName = null,Object? email = null,Object? profilePic = null,Object? subscriptions = null,Object? videos = null,Object? description = null,Object? type = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? userId = null,Object? displayName = null,Object? username = null,Object? email = null,Object? profilePic = null,Object? subscriptions = null,Object? videos = null,Object? description = null,Object? type = null,}) {
   return _then(_UserModel(
 userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String,displayName: null == displayName ? _self.displayName : displayName // ignore: cast_nullable_to_non_nullable
-as String,userName: null == userName ? _self.userName : userName // ignore: cast_nullable_to_non_nullable
+as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,profilePic: null == profilePic ? _self.profilePic : profilePic // ignore: cast_nullable_to_non_nullable
 as String,subscriptions: null == subscriptions ? _self._subscriptions : subscriptions // ignore: cast_nullable_to_non_nullable
