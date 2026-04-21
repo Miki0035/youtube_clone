@@ -5,22 +5,40 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:youtube_clone/features/upload/long_video/video_details_page.dart';
 
 void showErrorSnackBar(String message, context) =>
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message), duration: const Duration(seconds: 1)),
     );
 
-Future<File> pickVideo() async {
+// pick video
+Future<void> pickVideo(BuildContext context) async {
   final file = await ImagePicker().pickVideo(source: ImageSource.gallery);
   final video = File(file!.path);
   if (video != null) {
-    return video;
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => VideoDetailsPage(video: video)),
+    );
+  }
+}
+
+// pick image
+Future<File> pickImage() async {
+  final file = await ImagePicker().pickImage(source: ImageSource.gallery);
+  final image = File(file!.path);
+  if (image != null) {
+    return image;
   }
 }
 
 // Firebase storage doesn't work cause paid plan
-Future<String> putFileInStorage(File file, int number, String fileType) async {
+Future<String> putFileInStorage(
+  File file,
+  String number,
+  String fileType,
+) async {
   final ref = FirebaseStorage.instance.ref().child("$fileType/$number");
   final uploaded = ref.putFile(file);
   final snapShot = await uploaded;
