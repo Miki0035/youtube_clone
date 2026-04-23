@@ -15,13 +15,13 @@ void showErrorSnackBar(String message, context) =>
 // pick video
 Future<void> pickVideo(BuildContext context) async {
   final file = await ImagePicker().pickVideo(source: ImageSource.gallery);
-  final video = File(file!.path);
-  if (video != null) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => VideoDetailsPage(video: video)),
-    );
-  }
+  if (file == null) return;
+
+  final video = File(file.path);
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (_) => VideoDetailsPage(video: video)),
+  );
 }
 
 // pick image

@@ -20,8 +20,8 @@ class Post extends ConsumerWidget {
         children: [
           CachedNetworkImage(
             imageUrl:
-                video.thumbnail ??
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5vUv5dJj3OUG-pHtsNqs_098n4GrxVAI5WA&s",
+            //  ?? video.thumbnail
           ),
 
           Row(

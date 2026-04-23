@@ -103,18 +103,20 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigation(
-        onPressed: (index) {
-          if (index != 2) {
-            currentIndex = index;
-            setState(() {});
-          } else {
-            showModalBottomSheet(
-              context: context,
-              builder: (_) => CreateBottomSheet(),
-            );
-          }
-        },
+      bottomNavigationBar: SafeArea(
+        child: BottomNavigation(
+          onPressed: (index) {
+            if (index != 2) {
+              currentIndex = index;
+              setState(() {});
+            } else {
+              showModalBottomSheet(
+                context: context,
+                builder: (_) => CreateBottomSheet(),
+              );
+            }
+          },
+        ),
       ),
     );
   }
