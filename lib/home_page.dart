@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_clone/core/screens/error_page.dart';
 import 'package:youtube_clone/core/screens/loader.dart';
 import 'package:youtube_clone/core/widgets/image_button.dart';
+import 'package:youtube_clone/features/account/account_page.dart';
 import 'package:youtube_clone/features/auth/provider/user_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:youtube_clone/features/content/bottom_navigation.dart';
@@ -70,11 +71,22 @@ class _HomePageState extends State<HomePage> {
                         .when(
                           data: (currentUser) => Padding(
                             padding: const EdgeInsets.only(right: 12.0),
-                            child: CircleAvatar(
-                              radius: 15.0,
-                              backgroundColor: Colors.grey,
-                              backgroundImage: CachedNetworkImageProvider(
-                                currentUser.profilePic,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) =>
+                                        AccountPage(user: currentUser),
+                                  ),
+                                );
+                              },
+                              child: CircleAvatar(
+                                radius: 15.0,
+                                backgroundColor: Colors.grey,
+                                backgroundImage: CachedNetworkImageProvider(
+                                  currentUser.profilePic,
+                                ),
                               ),
                             ),
                           ),

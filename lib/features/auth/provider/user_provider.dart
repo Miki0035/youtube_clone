@@ -8,3 +8,10 @@ final currentUserProvider = FutureProvider<UserModel>((ref) async {
       .fetchCurrentUserData();
   return user;
 });
+
+final anyUserDataProvider = FutureProvider.family((ref, String userId) async {
+  final UserModel user = await ref
+      .watch(userDataServiceProvider)
+      .fetchAnyUserData(userId);
+  return user;
+});

@@ -11,7 +11,7 @@ class VideoRepository {
 
   VideoRepository({required this.firestore});
 
-  uploadVideoToFirestore({
+  Future<void> uploadVideoToFirestore({
     required String videoUrl,
     required String thumbnail,
     required String title,
