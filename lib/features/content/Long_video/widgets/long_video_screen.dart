@@ -15,7 +15,7 @@ class LongVideoScreen extends StatelessWidget {
         child: StreamBuilder(
           stream: FirebaseFirestore.instance.collection("videos").snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) {
+            if (!snapshot.hasData || snapshot.data == null) {
               return ErrorPage();
             }
 
